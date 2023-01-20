@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video</title>
+</head>
+<body>
+    <video id="meuvideo" width="600px" preload="metadata" controls controlsList="nodownload">
+        <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+        <p>
+            infelizmente seu navegado nao e compativel com reprodução de video.
+        </p>
+    </video>
+
+    <div wm-progresso="meuvideo" class="progresso">
+        <div id="vermelhor"></div>
+    </div>
+
+    <div>
+        <button id="play">Play</button>
+        <button id="pause">Pause</button>
+    </div>
+
+    <style>
+    .progresso {
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        margin: 20px;
+    }
+
+    .progresso > div {
+        background-color: red;
+        color: #fff;
+        height: 100%;
+        text-align: right;
+        font-size: 14px;
+        width: 0%;
+    }
+</style>
+
+<script>
+    function confvideo(id) {
+        const video = document.getElementById(id)
+        video.oncontextmenu = () => false // nao mostra o menu de contexto
+
+        document.querySelector('#play').onclick = e => video.play()
+        document.querySelector('#pause').onclick = e => video.pause()
+
+        setInterval(() => {
+            const percentual = (video.currentTime / video.duration) * 100
+            const valorDiv = document.querySelector('#vermelhor')
+            valorDiv.style.width = `${percentual}%`
+            valorDiv.innerHTML = `${percentual.toFixed(1)}%`
+        }, 500)
+
+    }
+
+    confvideo('meuvideo')
+</script>
+
+</body>
+</html>

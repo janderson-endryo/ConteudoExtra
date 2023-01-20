@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista</title>
+
+    <style>
+        .mouse {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <span class="mouse" wm-folder>back-end</span>
+            <ul>
+                <li>
+                    <span class="mouse" wm-folder>app</span>
+                    <ul>
+                        <li>produto.js</li>
+                        <li>usuario.js</li>
+                        <li>venda.js</li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="mouse" wm-folder>config</span>
+                    <ul>
+                        <li>banco.js</li>
+                        <li>rotas.js</li>
+                        <li>servido.js</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <span class="mouse" wm-folder>frontend</span>
+            <ul>
+                <li>
+                    <span class="mouse" wm-folder>publico</span>
+                    <ul>
+                        <li>app.css</li>
+                        <li>app.js</li>
+                        <li>index.html</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        document.querySelectorAll('[wm-folder]').forEach(folder => {
+            folder.onclick = function(e) {
+                const ul = folder.nextElementSibling
+                const d = ul.style.display
+                ul.style.display = d === "none" ? "block" : "none"
+            }
+        })
+    </script>
+</body>
+</html>
