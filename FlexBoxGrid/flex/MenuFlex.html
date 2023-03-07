@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        body {
+            background-color: lightgray;
+        }
+
+        .cabecalho {
+            background-color: #333;
+            border-bottom: solid 5px #4faddb;
+            height: 80px;
+            box-sizing: content-box;
+        }
+        .logo img{
+            height: 50px;
+        }
+
+        .menu ul {
+            list-style: none;
+            
+        }
+
+        .cabecalho a {
+            text-decoration: none;
+            color: #eee;
+            font-size: 1.3em;
+            padding: 10px 15px;
+        }
+
+        .menu a:hover{
+            background-color: #4faddb;
+            color: #000;
+        }
+
+        .cabecalho .botao {
+            border-radius: 30px;
+            padding: 10px 25px;
+            margin-right: 10px;
+        }
+
+        .destaque {
+            background-color: #f50a31;
+            color: #fff;
+        }
+
+        .cabecalho{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cabecalho div:nth-child(1) {
+            align-self:flex-start ;
+        }
+        .menu {
+            flex-grow: 10;
+        }
+
+        .menu ul {
+            display: flex;
+            justify-content: end;
+            
+        }
+        
+        .menu li {
+            margin: 0px 10px;
+            display: flex;
+        }
+    </style>
+
+    <title>menu</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+
+            <a href="#inicio">
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="logo">
+            </a>
+        </div>
+
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#inicio">inicio</a>
+                </li>
+                <li>
+                    <a href="#cursos">cursos</a>
+                </li>
+                <li>
+                    <a href="#sobre">sobre</a>
+                </li>
+                <li>
+                    <a href="#contato">contato</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autenticacao">
+            <a href="#login">login</a>
+            <a href="#regi" class="botao destaque">registrar</a>
+        </aside>
+    </header>
+
+    <script>
+        window.onhashchange = function (e) {
+            const oldURL = e.oldURL.split('#')[1]
+            const newURL = e.newURL.split('#')[1]
+            const oldMenu = document.querySelector(`.menu a[href='#${oldURL}']`)
+            const newMenu = document.querySelector(`.menu a[href='#${newURL}']`)
+            oldMenu && oldMenu.classList.remove("selected")
+            newMenu && newMenu.classList.add("selected")
+        }
+    </script>
+</body>
+
+</html>
