@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+
+        .flex-container div{
+            box-sizing: border-box;
+        }
+        .flex-container {
+            display: flex;
+            /*padrao*/
+            flex-direction:row ;
+            flex-wrap: nowrap;
+            justify-content: stretch;
+            align-items: stretch;
+        }
+        .flex-container div {
+            flex-basis: 100px; /*caso direction for column ele vai aumenta de tamanho na vertical*/
+        }
+        .flex-container div:nth-child(4) {
+            /*grow shrink basis*/
+
+            /*
+            flex-grow: ;
+            flex-shrink: ;
+            flex-basis: ;
+            */
+    
+            flex: 3 6 100px; /*quando for definido um width pra menor ou maio ai vai fazer um diferença visual*/
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>
