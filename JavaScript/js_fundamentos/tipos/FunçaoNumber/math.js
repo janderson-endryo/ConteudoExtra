@@ -1,6 +1,6 @@
 let raio = 10
 
-const area = Math.PI * Math.pow(raio, 2) // pow = baseexpoente
+const area = Math.PI * Math.pow(raio, 2) // pow = base expoente
 
 console.log(area.toFixed(2))
 
