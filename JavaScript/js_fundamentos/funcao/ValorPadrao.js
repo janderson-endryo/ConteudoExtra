@@ -14,8 +14,8 @@ console.log(somar(1, 0, 10, 0))
 
 // padrao 2015 
 
-function somar001(a = 1, b = 1, c = 1) {
+function somar001(a = 0, b = 0, c = 0) {
     return a + b + c
 }
 
-console.log(somar001(0,0,0))
+console.log(somar001(1))

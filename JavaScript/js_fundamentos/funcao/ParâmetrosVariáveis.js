@@ -22,6 +22,6 @@ function somar() {
     return somar
 }
 
-console.log(somar("janderson")) 
+console.log(somar(10,2,3,6,7,8,4,4,34.44,342.983,1.2423432,4.3423432))
 
 // com o arguments a funçao conseguer recebe vario parametros
